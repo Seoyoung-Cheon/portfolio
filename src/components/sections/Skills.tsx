@@ -10,7 +10,7 @@ export default function Skills() {
   return (
     <section id="skills" className="py-20">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12">기술 스택</h2>
+        <h2 className="text-4xl font-bold text-center mb-12 text-white">기술 스택</h2>
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {skills.map((skill) => (
             <Card key={skill.category}>

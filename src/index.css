@@ -62,12 +62,19 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
     min-height: 100vh;
     margin: 0;
     padding: 0;
     width: 100%;
     overflow-x: hidden;
+    overflow-y: auto;
+    font-family: 'Chiron GoRound TC', sans-serif;
+    background-image: url('/main_bg.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
   }
 
   #root {
@@ -76,6 +83,7 @@
     padding: 0;
   }
 }
+
 
 @font-face {
   src: url("https://www.axis-praxis.org/fonts/webfonts/MetaVariableDemo-Set.woff2") format("woff2");

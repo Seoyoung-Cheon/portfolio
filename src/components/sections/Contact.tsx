@@ -6,7 +6,7 @@ export default function Contact() {
   return (
     <section id="contact" className="py-20">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12">연락처</h2>
+        <h2 className="text-4xl font-bold text-center mb-12 text-white">연락처</h2>
         <div className="max-w-2xl mx-auto">
           <Card>
             <CardHeader>

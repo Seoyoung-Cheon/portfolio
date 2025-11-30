@@ -47,8 +47,8 @@ export default function Hero() {
     function animate() {
       if (!ctx || !canvas) return;
       
-      ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      // 배경을 투명하게 지우기
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       // 파티클 업데이트
       for (let i = particles.length - 1; i >= 0; i--) {
@@ -99,8 +99,17 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen w-screen flex items-center justify-center bg-black relative overflow-hidden"
-      style={{ margin: 0, padding: 0, width: "100vw" }}
+      className="min-h-screen w-screen flex items-center justify-center relative overflow-hidden"
+      style={{ 
+        margin: 0, 
+        padding: 0, 
+        width: "100vw", 
+        backgroundImage: "url('/main_bg.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed"
+      }}
     >
       <canvas
         ref={canvasRef}

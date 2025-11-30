@@ -7,7 +7,7 @@ import SideNavigation from "@/components/SideNavigation";
 
 function App() {
   return (
-    <main className="min-h-screen w-full" style={{ width: "100%", margin: 0, padding: 0 }}>
+    <main className="min-h-screen w-full" style={{ width: "100%", margin: 0, padding: 0, background: "transparent" }}>
       <SideNavigation />
       <Hero />
       <About />
