@@ -1,13 +1,6 @@
 import ProfileCard from "@/components/ProfileCard";
 
 export default function About() {
-  const scrollToContact = () => {
-    const element = document.getElementById("contact");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <section id="about" className="py-20 min-h-screen" style={{ minHeight: '100vh' }}>
       <div className="container mx-auto px-4">
@@ -42,14 +35,9 @@ export default function About() {
               <ProfileCard
                 name="천서영"
                 title="신입 프론트엔드 개발자"
-                handle="seoyoung"
-                status="Available"
-                contactText="Contact Me"
                 avatarUrl="/myface.jpg"
-                showUserInfo={true}
                 enableTilt={true}
                 enableMobileTilt={false}
-                onContactClick={scrollToContact}
               />
             </div>
           </div>

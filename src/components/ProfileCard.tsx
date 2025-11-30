@@ -30,11 +30,6 @@ interface ProfileCardProps {
   miniAvatarUrl?: string;
   name?: string;
   title?: string;
-  handle?: string;
-  status?: string;
-  contactText?: string;
-  showUserInfo?: boolean;
-  onContactClick?: () => void;
 }
 
 const ProfileCardComponent: React.FC<ProfileCardProps> = ({
@@ -49,14 +44,8 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
   enableTilt = true,
   enableMobileTilt = false,
   mobileTiltSensitivity = 5,
-  miniAvatarUrl,
   name = 'Javi A. Torres',
-  title = 'Software Engineer',
-  handle = 'javicodes',
-  status = 'Online',
-  contactText = 'Contact',
-  showUserInfo = true,
-  onContactClick
+  title = 'Software Engineer'
 }) => {
   const wrapRef = useRef<HTMLDivElement>(null);
   const shellRef = useRef<HTMLDivElement>(null);
@@ -269,8 +258,8 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
     const handleClick = () => {
       if (!enableMobileTilt || location.protocol !== 'https:') return;
       const anyMotion = window.DeviceMotionEvent;
-      if (anyMotion && typeof (anyMotion as any).requestPermission === 'function') {
-        (anyMotion as any)
+      if (anyMotion && typeof (anyMotion as unknown as { requestPermission?: () => Promise<string> }).requestPermission === 'function') {
+        (anyMotion as unknown as { requestPermission: () => Promise<string> })
           .requestPermission()
           .then((state: string) => {
             if (state === 'granted') {
@@ -322,9 +311,6 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
     [iconUrl, grainUrl, innerGradient, behindGlowColor, behindGlowSize]
   );
 
-  const handleContactClick = useCallback(() => {
-    onContactClick?.();
-  }, [onContactClick]);
 
   return (
     <div ref={wrapRef} className={`pc-card-wrapper ${className}`.trim()} style={cardStyle}>

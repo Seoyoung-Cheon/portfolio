@@ -11,6 +11,7 @@ const projects = [
     demo: "https://test-front-lovat.vercel.app/",
     image: "/heritage.png",
     isExpired: true,
+    role: "프론트엔드",
   },
   {
     title: "Lawmang",
@@ -20,11 +21,13 @@ const projects = [
     demo: "https://lawmang-front.vercel.app/",
     image: "/Lawmang.png",
     isExpired: true,
+    role: "프론트엔드",
   },
   {
     title: "Marryday(1차)",
     description: "사용자의 전신 사진과 드레스 이미지를 업로드하면 AI가 자동으로 피팅하여 체형에 맞는 드레스를 시각화해주는 웹 플랫폼입니다.",
     image: "/Marryday1.png",
+    role: "프론트엔드",
   },
   {
     title: "Marryday(고품화)",
@@ -33,6 +36,7 @@ const projects = [
     github: "https://github.com/MerrydayPrject/final-repo-front",
     demo: "https://www.marryday.co.kr/",
     image: "/Marryday2.png",
+    role: "프론트엔드",
   },
 ];
 
@@ -62,7 +66,13 @@ export default function Projects() {
                     </span>
                   )}
                 </div>
-                <CardDescription className="text-white/70">{project.description}</CardDescription>
+                {project.role && (
+                  <div className="mt-2">
+                    <span className="text-white/60 text-sm font-medium">역할: </span>
+                    <span className="text-white text-sm font-medium">{project.role}</span>
+                  </div>
+                )}
+                <CardDescription className="text-white/70 mt-2">{project.description}</CardDescription>
               </CardHeader>
               <CardContent className="flex-1 flex flex-col">
                 {project.tech && project.tech.length > 0 && (
