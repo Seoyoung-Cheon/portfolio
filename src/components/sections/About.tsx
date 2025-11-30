@@ -1,4 +1,3 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import ProfileCard from "@/components/ProfileCard";
 
 export default function About() {
@@ -10,30 +9,32 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="py-20">
+    <section id="about" className="py-20 min-h-screen" style={{ minHeight: '100vh' }}>
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-light text-center mb-12 text-white" style={{ fontFamily: 'Chiron GoRound TC', letterSpacing: '0.05em' }}>About Me</h2>
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             {/* 텍스트 영역 */}
             <div>
-              <Card>
-                <CardHeader>
-                  <CardTitle>안녕하세요!</CardTitle>
-                  <CardDescription>개발자로서의 여정</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-muted-foreground">
-                    저는 사용자 경험을 중시하는 개발자입니다. 깔끔한 코드와 직관적인
-                    인터페이스를 만들어 사용자에게 가치를 전달하는 것을 좋아합니다.
-                  </p>
-                  <p className="text-muted-foreground">
-                    최신 기술 스택을 학습하고 적용하는 것을 즐기며, 지속적인 성장을
-                    추구합니다. 팀과의 협업을 통해 더 나은 솔루션을 만들어가는 것을
-                    목표로 합니다.
-                  </p>
-                </CardContent>
-              </Card>
+              <div className="about-card">
+                <div className="about-card-content">
+                  <h3 className="about-card-title">안녕하세요!</h3>
+                  <p className="about-card-subtitle">개발자로서의 여정</p>
+                  <div className="about-card-description">
+                    <p>
+                      저는 약 3년간 QA로 일하며 수많은 오류를 발견하고, 사용자 행동을 관찰하며 제품의 디테일을 고민해왔습니다.
+                    </p>
+                    <p>
+                     그 경험은 지금의 저를 만드는 탄탄한 기반이 되었습니다.
+그저 기능을 만드는 데서 멈추지 않고,
+                      사용자가 어떻게 느끼고 사용할지를 끝까지 상상하며 개발합니다.
+                      <br /><br /><p>또한 새로운 기술과 디자인 트렌드를 탐색하고 적용하는 과정을 좋아하며,
+더 나은 경험을 위해 끊임없이 실험하고 성장하고 있습니다.</p>
+                      </p>
+                    
+                  </div>
+                </div>
+              </div>
             </div>
             
             {/* ProfileCard 영역 */}

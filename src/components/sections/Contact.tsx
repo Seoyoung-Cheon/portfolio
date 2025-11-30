@@ -1,43 +1,25 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Mail, Github, Linkedin } from "lucide-react";
+import { Mail } from "lucide-react";
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-20">
+    <section id="contact" className="py-20 min-h-screen flex items-center justify-center" style={{ minHeight: '100vh' }}>
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 text-white">연락처</h2>
         <div className="max-w-2xl mx-auto">
-          <Card>
-            <CardHeader>
-              <CardTitle>함께 일하고 싶으신가요?</CardTitle>
-              <CardDescription>
-                프로젝트나 협업에 관심이 있으시다면 언제든지 연락주세요.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="outline" asChild>
-                  <a href="mailto:your.email@example.com">
-                    <Mail className="w-4 h-4 mr-2" />
-                    이메일
-                  </a>
-                </Button>
-                <Button variant="outline" asChild>
-                  <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-                    <Github className="w-4 h-4 mr-2" />
-                    GitHub
-                  </a>
-                </Button>
-                <Button variant="outline" asChild>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                    <Linkedin className="w-4 h-4 mr-2" />
-                    LinkedIn
-                  </a>
-                </Button>
+          <div className="contact-card">
+            <div className="contact-card-content">
+              <h2 className="contact-title">감사합니다</h2>
+              <p className="contact-description">
+                제가 구현하는 화면이 사용자의 첫 인상이 되는 만큼,
+더 나은 경험을 설계하고 구현하는 프론트엔드 개발자로 성장하겠습니다.
+              </p>
+              <div className="contact-email">
+                <Mail className="contact-email-icon" />
+                <span className="contact-email-text">
+                  gu05087@gmail.com
+                </span>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </div>
       </div>
     </section>
