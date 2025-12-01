@@ -32,22 +32,28 @@ export default function About() {
             
             {/* ProfileCard 영역 */}
             <div className="flex justify-center items-center">
-              <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
+              <div className="relative inline-block">
                 <ProfileCard
                   name="천서영"
-                  title="신입 프론트엔드 개발자"
+                  title="프론트엔드 개발자"
                   avatarUrl="/myface.jpg"
                   enableTilt={true}
                   enableMobileTilt={false}
                 />
-                {/* 포스트잇 스타일 정보 박스 */}
-                <div className="relative">
-                  <div className="bg-amber-100/90 text-slate-800 px-4 py-3 rounded-md shadow-lg border border-amber-200 text-sm md:text-base -rotate-1 md:rotate-1 min-w-[180px]">
-                    <p className="font-semibold mb-1">생년월일: <span className="font-normal">1998.11.11</span></p>
-                    <p className="font-semibold mb-1">거주지: <span className="font-normal">서울시 구로구</span></p>
-                    <p className="font-semibold">학력: <span className="font-normal">대림대학교 의공융합과</span></p>
+                {/* 포스트잇 스타일 정보 박스 - 데스크톱 기준 우측 상단에 배치 (모바일 미지원) */}
+                {/* Tailwind 음수 right 유틸을 사용해 더 멀리 우측으로 이동 */}
+                <div className="block absolute top-6 -right-32 lg:-right-40">
+                  <div className="relative bg-amber-100 text-slate-800 px-4 py-3 rounded-md shadow-lg border border-amber-200 text-sm md:text-base -rotate-1" style={{ fontFamily: 'Chiron GoRound TC' }}>
+                    <p className="font-semibold mb-1 whitespace-nowrap">
+                      생년월일: <span className="font-normal">1998.11.11</span>
+                    </p>
+                    <p className="font-semibold mb-1 whitespace-nowrap">
+                      거주지: <span className="font-normal">서울시 구로구</span>
+                    </p>
+                    <p className="font-semibold whitespace-nowrap">
+                      학력: <span className="font-normal">대림대학교 의공융합과</span>
+                    </p>
                   </div>
-                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-10 h-3 bg-amber-300/80 rounded-sm shadow-sm" />
                 </div>
               </div>
             </div>
