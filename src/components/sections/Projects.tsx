@@ -92,7 +92,7 @@ export default function Projects() {
                     <Button variant="outline" size="sm" asChild className="border-white/20 bg-white/90 text-black hover:scale-105 transition-transform">
                       <a href={project.github} target="_blank" rel="noopener noreferrer">
                         <Github className="w-4 h-4 mr-2" />
-                        코드
+                        Github
                       </a>
                     </Button>
                   )}
