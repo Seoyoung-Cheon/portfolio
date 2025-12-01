@@ -15,7 +15,11 @@ import {
   Network,
   CheckSquare,
   Send,
-  FileSpreadsheet
+  FileSpreadsheet,
+  Database,
+  MessageSquare,
+  Settings,
+  PenTool
 } from "lucide-react";
 
 const skills = [
@@ -54,9 +58,19 @@ const skills = [
   { 
     category: "QA Tools", 
     items: [
+      { name: "TD", icon: Database },
       { name: "Jira", icon: CheckSquare },
       { name: "Postman", icon: Send },
-      { name: "Excel 기반 TC관리", icon: FileSpreadsheet }
+      { name: "ALM", icon: Settings }
+    ]
+  },
+  { 
+    category: "협업 Tools", 
+    items: [
+      { name: "Slack", icon: MessageSquare },
+      { name: "Google Sheets", icon: FileSpreadsheet },
+      { name: "Jira", icon: CheckSquare },
+      { name: "Figma", icon: PenTool }
     ]
   },
 ];
