@@ -2,16 +2,16 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { 
   Code, 
   Palette, 
-  Wrench, 
+   
   Server, 
-  ClipboardCheck,
+  
   FileCode,
   Layers,
   Zap,
   GitBranch,
   Github,
   Rocket,
-  Database,
+
   Network,
   CheckSquare,
   Send,
@@ -45,7 +45,7 @@ const skills = [
     ]
   },
   { 
-    category: "Backend (기초)", 
+    category: "Backend", 
     items: [
       { name: "Node.js", icon: Server },
       { name: "Axios", icon: Network }
@@ -63,7 +63,7 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-20 min-h-screen" style={{ minHeight: '100vh' }}>
+    <section id="skills" className="pt-32 pb-20 min-h-screen" style={{ minHeight: '100vh' }}>
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 text-white">기술 스택</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">

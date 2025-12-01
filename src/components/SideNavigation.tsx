@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 const sections = [
   { id: "hero", label: "메인" },
   { id: "about", label: "소개" },
+  { id: "career", label: "경력" },
   { id: "skills", label: "기술" },
   { id: "projects", label: "프로젝트" },
   { id: "contact", label: "연락처" },
@@ -56,7 +57,7 @@ export default function SideNavigation() {
           >
             <div
               className={cn(
-                "w-1 h-12 bg-white/30 rounded-full transition-all duration-300",
+                "w-3 h-12 bg-white/30 rounded-full transition-all duration-300",
                 activeSection === section.id
                   ? "bg-white h-16"
                   : "hover:bg-white/50 hover:h-14"

@@ -278,3 +278,23 @@
   font-weight: 500;
   user-select: text;
 }
+
+/* 커서 이펙트 */
+.cursor {
+  opacity: 0;
+  position: fixed;
+  z-index: 1000;
+  transform: translate(-50%, -50%) scale(0.5);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%);
+  pointer-events: none;
+  transition-property: background, transform;
+  transition-duration: 0.4s;
+}
+
+.cursor.on {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
