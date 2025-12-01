@@ -5,7 +5,7 @@ import { ExternalLink, Github } from "lucide-react";
 const projects = [
   {
     title: "유산지기",
-    description: "유산지기는 사용자의 위치 기반으로 주변 문화유산과 행사 정보를 제공하는 웹 서비스입니다.",
+    description: "사용자의 위치 기반으로 주변 문화유산과 행사 정보를 제공하는 웹 서비스입니다.",
     tech: ["React", "JavaScript", "Tailwind CSS","redux Toolkit","PostgreSQL","Google Maps API"],
     github: "https://github.com/noseunghyeon/test_front",
     demo: "https://test-front-lovat.vercel.app/",
@@ -61,15 +61,14 @@ export default function Projects() {
                 <div className="flex items-center gap-2 flex-wrap">
                   <CardTitle className="text-white">{project.title}</CardTitle>
                   {project.isExpired && (
-                    <span className="text-red-500 text-xs font-normal">
+                    <span className="text-red-500 text-xs font-normal mt-2">
                       * AWS 기간이 만료되어 운영중이지 않습니다.
                     </span>
                   )}
                 </div>
                 {project.role && project.role.length > 0 && (
                   <div className="mt-3">
-                    <span className="text-white/60 text-sm font-medium block mb-2">내 역할: </span>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-2 mt-2 mb-2">
                       {project.role.map((r, idx) => (
                         <span
                           key={idx}
