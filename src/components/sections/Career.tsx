@@ -323,7 +323,7 @@ export default function Career() {
                             transition: `opacity 0.4s ease-out ${descIndex * 0.1}s, transform 0.4s ease-out ${descIndex * 0.1}s`
                           }}
                         >
-                          <span className="text-white/60 mt-1">•</span>
+                          <span className="text-white/60">•</span>
                           <span>{desc}</span>
                         </li>
                       ))}
