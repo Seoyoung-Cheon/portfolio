@@ -2,6 +2,18 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
 
+// 프로젝트 타입 정의
+interface Project {
+  title: string;
+  description: string;
+  image?: string;
+  role?: string[];
+  tech?: string[];
+  github?: string;
+  demo?: string;
+  isExpired?: boolean;
+}
+
 // 기술 스택 아이콘 매핑 (tech 이름 -> public 폴더 이미지 경로)
 const techIconMap: Record<string, string> = {
   "React": "/React.png",
@@ -18,7 +30,7 @@ const techIconMap: Record<string, string> = {
   "Vite": "/vite.png",
 };
 
-const projects = [
+const completedProjects: Project[] = [
   {
     title: "유산지기",
     description: "사용자의 위치 기반으로 주변 문화유산과 행사 정보를 제공하는 웹 서비스입니다.",
@@ -77,103 +89,223 @@ const projects = [
   },
 ];
 
+const upcomingProjects: Project[] = [
+  {
+    title: "LOOKI (APP)",
+    description: "사용자가 옷을 촬영해 등록하면 앱이 자동으로 정리해주고, AI가 각 옷의 특징을 분석해 어울리는 아이템과 상황별 스타일을 추천해주는 서비스입니다. 새로운 옷 없이도 다양한 코디를 발견할 수 있으며, 매일 고민 없이 자신만의 스타일을 쉽게 완성할 수 있도록 돕습니다.",
+    image: "/LOOKI2.png",
+    role: ["프론트엔드 개발 예정"],
+  },
+];
+
 export default function Projects() {
   return (
     <section id="projects" className="py-20">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 text-white">프로젝트</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
-          {projects.map((project, index) => (
-            <Card key={index} className="flex flex-col bg-white/5 backdrop-blur-sm border-white/10 overflow-hidden">
-              {project.image && (
-                <div className="w-full h-64 overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              )}
-              <CardHeader>
-                <div className="flex items-center gap-2 flex-wrap">
-                  <CardTitle className="text-white">{project.title}</CardTitle>
-                  {project.isExpired && (
-                    <span className="text-red-500 text-xs font-normal mt-2">
-                      * AWS 기간이 만료되어 운영중이지 않습니다.
-                    </span>
-                  )}
-                </div>
-                {project.role && project.role.length > 0 && (
-                  <div className="mt-3">
-                    <div className="flex flex-wrap gap-2 mt-2 mb-2">
-                      {project.role.map((r, idx) => (
-                        <span
-                          key={idx}
-                          className="px-3 py-1 bg-orange-500/20 text-orange-300 rounded-md text-xs font-medium border border-orange-500/30"
-                        >
-                          {r}
-                        </span>
-                      ))}
-                    </div>
+        <h2 className="text-4xl font-bold text-center mb-12 text-white" style={{ fontFamily: 'ThinRounded' }}>프로젝트</h2>
+        
+        {/* 완료한 프로젝트 */}
+        <div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
+            {completedProjects.map((project, index) => (
+              <Card key={index} className="flex flex-col bg-white/5 backdrop-blur-sm border-white/10 overflow-hidden">
+                {project.image && (
+                  <div className="w-full h-64 overflow-hidden">
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 )}
-                <CardDescription className="text-white/70 mt-2">{project.description}</CardDescription>
-              </CardHeader>
-              <CardContent className="flex-1 flex flex-col">
-                {project.tech && project.tech.length > 0 && (
-                  <div className="flex flex-wrap gap-3 mb-4">
-                    {project.tech.map((tech) => {
-                      const iconSrc = techIconMap[tech];
-                      if (iconSrc) {
+                <CardHeader>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <CardTitle className="text-white">{project.title}</CardTitle>
+                    {project.isExpired && (
+                      <span className="text-red-500 text-xs font-normal mt-2">
+                        * AWS 기간이 만료되어 운영중이지 않습니다.
+                      </span>
+                    )}
+                  </div>
+                  {project.role && project.role.length > 0 && (
+                    <div className="mt-3">
+                      <div className="flex flex-wrap gap-2 mt-2 mb-2">
+                        {project.role.map((r, idx) => (
+                          <span
+                            key={idx}
+                            className="px-3 py-1 bg-orange-500/20 text-orange-300 rounded-md text-xs font-medium border border-orange-500/30"
+                          >
+                            {r}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  <CardDescription className="text-white/70 mt-2">{project.description}</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-1 flex flex-col">
+                  {project.tech && project.tech.length > 0 && (
+                    <div className="flex flex-wrap gap-3 mb-4">
+                      {project.tech.map((tech: string) => {
+                        const iconSrc = techIconMap[tech];
+                        if (iconSrc) {
+                          return (
+                            <div
+                              key={tech}
+                              className="w-10 h-10 rounded-lg bg-white/40 border border-white/70 flex items-center justify-center hover:bg-white/60 transition-colors cursor-default"
+                              title={tech}
+                            >
+                              <img
+                                src={iconSrc}
+                                alt={tech}
+                                className="w-8 h-8 object-contain"
+                              />
+                            </div>
+                          );
+                        }
+
+                        // 아이콘이 없는 기술은 기존 텍스트 뱃지로 표시
                         return (
-                          <div
+                          <span
                             key={tech}
-                            className="w-10 h-10 rounded-lg bg-white/40 border border-white/70 flex items-center justify-center hover:bg-white/60 transition-colors cursor-default"
+                            className="px-2 py-1 bg-white/10 text-white rounded text-xs border border-white/20"
                             title={tech}
                           >
-                            <img
-                              src={iconSrc}
-                              alt={tech}
-                              className="w-8 h-8 object-contain"
-                            />
-                          </div>
+                            {tech}
+                          </span>
                         );
-                      }
+                      })}
+                    </div>
+                  )}
+                  <div className="flex gap-2 mt-auto">
+                    {project.github && (
+                      <Button variant="outline" size="sm" asChild className="border-white/20 bg-white/90 text-black hover:scale-105 transition-transform">
+                        <a href={project.github} target="_blank" rel="noopener noreferrer">
+                          <Github className="w-4 h-4 mr-2" />
+                          Github
+                        </a>
+                      </Button>
+                    )}
+                    {project.demo && (
+                      <Button variant="outline" size="sm" asChild className="border-white/20 bg-white/90 text-black hover:scale-105 transition-transform">
+                        <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          사이트 방문하기
+                        </a>
+                      </Button>
+                    )}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
 
-                      // 아이콘이 없는 기술은 기존 텍스트 뱃지로 표시
-                      return (
-                        <span
-                          key={tech}
-                          className="px-2 py-1 bg-white/10 text-white rounded text-xs border border-white/20"
-                          title={tech}
-                        >
-                          {tech}
-                        </span>
-                      );
-                    })}
+        {/* 진행 할 프로젝트 */}
+        <div className="mt-16">
+          <h3 className="text-2xl font-bold text-center mb-8 text-white" style={{ fontFamily: 'ThinRounded' }}>진행 할 프로젝트</h3>
+          <div className="flex justify-center max-w-6xl mx-auto">
+            <div className="w-full max-w-md">
+            {upcomingProjects.map((project, index) => (
+              <Card 
+                key={`upcoming-${index}`} 
+                className="flex flex-col bg-white/5 backdrop-blur-sm border-white/10 overflow-hidden"
+              >
+                {project.image && (
+                  <div 
+                    className={`w-full overflow-hidden flex items-center justify-center ${
+                      project.title === "LOOKI (APP)" ? "h-48" : "h-64"
+                    }`}
+                    style={{ 
+                      backgroundColor: project.title === "LOOKI (APP)" ? "#F3CBB6" : "transparent"
+                    }}
+                  >
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className={project.title === "LOOKI (APP)" 
+                        ? "w-3/4 h-3/4 object-contain" 
+                        : "w-full h-full object-cover"
+                      }
+                    />
                   </div>
                 )}
-                <div className="flex gap-2 mt-auto">
-                  {project.github && (
-                    <Button variant="outline" size="sm" asChild className="border-white/20 bg-white/90 text-black hover:scale-105 transition-transform">
-                      <a href={project.github} target="_blank" rel="noopener noreferrer">
-                        <Github className="w-4 h-4 mr-2" />
-                        Github
-                      </a>
-                    </Button>
+                <CardHeader>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <CardTitle className="text-white">{project.title}</CardTitle>
+                  </div>
+                  {project.role && project.role.length > 0 && (
+                    <div className="mt-3">
+                      <div className="flex flex-wrap gap-2 mt-2 mb-2">
+                        {project.role.map((r, idx) => (
+                          <span
+                            key={idx}
+                            className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-md text-xs font-medium border border-blue-500/30"
+                          >
+                            {r}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   )}
-                  {project.demo && (
-                    <Button variant="outline" size="sm" asChild className="border-white/20 bg-white/90 text-black hover:scale-105 transition-transform">
-                      <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        사이트 방문하기
-                      </a>
-                    </Button>
+                  <CardDescription className="text-white/70 mt-2">{project.description}</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-1 flex flex-col">
+                  {project.tech && project.tech.length > 0 && (
+                    <div className="flex flex-wrap gap-3 mb-4">
+                      {project.tech.map((tech: string) => {
+                        const iconSrc = techIconMap[tech];
+                        if (iconSrc) {
+                          return (
+                            <div
+                              key={tech}
+                              className="w-10 h-10 rounded-lg bg-white/40 border border-white/70 flex items-center justify-center hover:bg-white/60 transition-colors cursor-default"
+                              title={tech}
+                            >
+                              <img
+                                src={iconSrc}
+                                alt={tech}
+                                className="w-8 h-8 object-contain"
+                              />
+                            </div>
+                          );
+                        }
+
+                        return (
+                          <span
+                            key={tech}
+                            className="px-2 py-1 bg-white/10 text-white rounded text-xs border border-white/20"
+                            title={tech}
+                          >
+                            {tech}
+                          </span>
+                        );
+                      })}
+                    </div>
                   )}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                  <div className="flex gap-2 mt-auto">
+                    {project.github && (
+                      <Button variant="outline" size="sm" asChild className="border-white/20 bg-white/90 text-black hover:scale-105 transition-transform">
+                        <a href={project.github} target="_blank" rel="noopener noreferrer">
+                          <Github className="w-4 h-4 mr-2" />
+                          Github
+                        </a>
+                      </Button>
+                    )}
+                    {project.demo && (
+                      <Button variant="outline" size="sm" asChild className="border-white/20 bg-white/90 text-black hover:scale-105 transition-transform">
+                        <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          사이트 방문하기
+                        </a>
+                      </Button>
+                    )}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
