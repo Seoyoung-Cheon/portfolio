@@ -82,7 +82,7 @@ export class FireworksEngine {
       
       for (let j = 0; j < partsPerArc; j++) {
         const randomAngleOffset = Math.random() * maxRandomAngleOffset;
-        let angle = angleInc * j + angleOffset + randomAngleOffset;
+        const angle = angleInc * j + angleOffset + randomAngleOffset;
         particleFactory(angle, ringSize);
       }
     }
