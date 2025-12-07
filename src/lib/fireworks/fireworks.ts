@@ -334,7 +334,7 @@ export class FireworksEngine {
 
       // Handle spin
       if (star.spinRadius) {
-        star.spinAngle = (star.spinAngle || 0) + star.spinSpeed * speed;
+        star.spinAngle = (star.spinAngle || 0) + (star.spinSpeed || 0.8) * speed;
         star.x += Math.sin(star.spinAngle) * star.spinRadius * speed;
         star.y += Math.cos(star.spinAngle) * star.spinRadius * speed;
       }
