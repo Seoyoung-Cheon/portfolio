@@ -34,3 +34,4 @@ export default function ImageCard({ imageUrl, characterImageUrl, name, title }: 
     </div>
   );
 }
+

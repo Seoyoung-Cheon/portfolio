@@ -51,3 +51,4 @@ export class Stage {
     this.ctx.scale(this.dpr, this.dpr);
   }
 }
+
