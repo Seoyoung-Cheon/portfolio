@@ -4,7 +4,7 @@ export default function About() {
   return (
     <section id="about" className="py-20 min-h-screen" style={{ minHeight: '100vh' }}>
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-light text-center mb-12 text-white" style={{ fontFamily: 'Chiron GoRound TC', letterSpacing: '0.05em' }}>About Me</h2>
+        <h2 className="text-4xl font-light text-center mb-12 text-white" style={{ fontFamily: 'ThinRounded', letterSpacing: '0.05em' }}>About Me</h2>
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             {/* 텍스트 영역 */}
@@ -43,7 +43,7 @@ export default function About() {
                 {/* 포스트잇 스타일 정보 박스 - 데스크톱 기준 우측 상단에 배치 (모바일 미지원) */}
                 {/* Tailwind 음수 right 유틸을 사용해 더 멀리 우측으로 이동 */}
                 <div className="block absolute top-6 -right-32 lg:-right-40">
-                  <div className="relative bg-amber-100 text-slate-800 px-4 py-3 rounded-md shadow-lg border border-amber-200 text-sm md:text-base -rotate-1" style={{ fontFamily: 'Chiron GoRound TC' }}>
+                  <div className="relative bg-amber-100 text-slate-800 px-4 py-3 rounded-md shadow-lg border border-amber-200 text-sm md:text-base -rotate-1" style={{ fontFamily: 'ThinRounded' }}>
                     <p className="font-semibold mb-1 whitespace-nowrap">
                       생년월일: <span className="font-normal">1998.11.11</span>
                     </p>

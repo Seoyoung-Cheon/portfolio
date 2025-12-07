@@ -386,7 +386,7 @@
 }
 
 .pc-details h3 {
-  font-family: 'Chiron GoRound TC', sans-serif;
+  font-family: 'ThinRounded', sans-serif;
   font-weight: 600;
   margin: 0;
   font-size: min(5svh, 3em);
@@ -396,7 +396,7 @@
 }
 
 .pc-details p {
-  font-family: 'Chiron GoRound TC', sans-serif;
+  font-family: 'ThinRounded', sans-serif;
   font-weight: 600;
   position: relative;
   top: -12px;

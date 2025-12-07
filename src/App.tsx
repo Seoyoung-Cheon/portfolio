@@ -7,10 +7,12 @@ import Contact from "@/components/sections/Contact";
 import SideNavigation from "@/components/SideNavigation";
 import Cursor from "@/components/Cursor";
 import ScrollToTop from "@/components/ScrollToTop";
+import Fireworks from "@/components/Fireworks";
 
 function App() {
   return (
     <main className="min-h-screen w-full" style={{ width: "100%", margin: 0, padding: 0, background: "transparent" }}>
+      <Fireworks />
       <Cursor />
       <SideNavigation />
       <ScrollToTop />

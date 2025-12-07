@@ -69,7 +69,7 @@
     width: 100%;
     overflow-x: hidden;
     overflow-y: auto;
-    font-family: 'Chiron GoRound TC', sans-serif;
+    font-family: 'ThinRounded', sans-serif;
     background-image: url('/main_bg.jpg') !important;
     background-size: cover !important;
     background-position: center !important;
@@ -94,7 +94,7 @@
 
 .note {
   color: white;
-  font-family: 'Chiron GoRound TC', sans-serif;
+  font-family: 'ThinRounded', sans-serif;
   font-weight: 900;
   font-size: 64px;
   z-index: 10;
@@ -171,7 +171,7 @@
 }
 
 .about-card-title {
-  font-family: 'Chiron GoRound TC', sans-serif;
+  font-family: 'ThinRounded', sans-serif;
   font-size: 2rem;
   font-weight: 700;
   color: white;
@@ -183,7 +183,7 @@
 }
 
 .about-card-subtitle {
-  font-family: 'Chiron GoRound TC', sans-serif;
+  font-family: 'ThinRounded', sans-serif;
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 1.5rem;
@@ -198,7 +198,7 @@
 
 .about-card-description p {
   margin-bottom: 1rem;
-  font-family: 'Chiron GoRound TC', sans-serif;
+  font-family: 'ThinRounded', sans-serif;
 }
 
 .about-card-description p:last-child {
@@ -235,7 +235,7 @@
 }
 
 .contact-title {
-  font-family: 'Chiron GoRound TC', sans-serif;
+  font-family: 'ThinRounded', sans-serif;
   font-size: 3rem;
   font-weight: 700;
   color: white;
@@ -247,7 +247,7 @@
 }
 
 .contact-description {
-  font-family: 'Chiron GoRound TC', sans-serif;
+  font-family: 'ThinRounded', sans-serif;
   font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.8;
@@ -272,7 +272,7 @@
 }
 
 .contact-email-text {
-  font-family: 'Chiron GoRound TC', sans-serif;
+  font-family: 'ThinRounded', sans-serif;
   font-size: 1.1rem;
   color: white;
   font-weight: 500;
@@ -288,7 +288,7 @@
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
   pointer-events: none;
   transition-property: background, transform;
   transition-duration: 0.4s;

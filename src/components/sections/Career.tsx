@@ -204,10 +204,10 @@ export default function Career() {
       style={{ minHeight: '100vh' }}
     >
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-4 text-white" style={{ fontFamily: 'Chiron GoRound TC' }}>
+        <h2 className="text-4xl font-bold text-center mb-4 text-white" style={{ fontFamily: 'ThinRounded' }}>
           회사 경력
         </h2>
-        <p className="text-center text-white/70 mb-8" style={{ fontFamily: 'Chiron GoRound TC' }}>
+        <p className="text-center text-white/70 mb-8" style={{ fontFamily: 'ThinRounded' }}>
           (주)엠스텍 (2022.03~2024.09)
         </p>
         
@@ -220,7 +220,7 @@ export default function Career() {
             transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
           }}
         >
-          <p className="text-xl text-white/90 font-medium" style={{ fontFamily: 'Chiron GoRound TC' }}>
+          <p className="text-xl text-white/90 font-medium" style={{ fontFamily: 'ThinRounded' }}>
             개발·기획·운영 팀과 협업해온 실무 경험
           </p>
         </div>
@@ -293,7 +293,7 @@ export default function Career() {
                       <div>
                         <div className="flex items-center gap-2 mb-2">
                           <CompanyIcon type={career.companyIcon} />
-                          <h3 className="text-2xl font-bold text-white" style={{ fontFamily: 'Chiron GoRound TC' }}>
+                          <h3 className="text-2xl font-bold text-white" style={{ fontFamily: 'ThinRounded' }}>
                             {career.company}
                           </h3>
                         </div>
