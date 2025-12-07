@@ -202,7 +202,7 @@ export default function Projects() {
         </div>
 
         {/* 진행 할 프로젝트 */}
-        <div className="mt-16">
+        <div className="mt-20">
           <h3 className="text-2xl font-bold text-center mb-8 text-white" style={{ fontFamily: 'ThinRounded' }}>진행 할 프로젝트</h3>
           <div className="flex justify-center max-w-6xl mx-auto">
             <div className="w-full max-w-md">
