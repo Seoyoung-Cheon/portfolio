@@ -1,4 +1,4 @@
-import ProfileCard from "@/components/ProfileCard";
+import ImageCard from "@/components/ImageCard";
 
 export default function About() {
   return (
@@ -30,15 +30,14 @@ export default function About() {
               </div>
             </div>
             
-            {/* ProfileCard 영역 */}
+            {/* ImageCard 영역 */}
             <div className="flex justify-center items-center">
               <div className="relative inline-block">
-                <ProfileCard
+                <ImageCard
+                  imageUrl="/myface.jpg"
+                  characterImageUrl="/myface2.png"
                   name="천서영"
                   title="프론트엔드 개발자"
-                  avatarUrl="/myface.jpg"
-                  enableTilt={true}
-                  enableMobileTilt={false}
                 />
                 {/* 포스트잇 스타일 정보 박스 - 데스크톱 기준 우측 상단에 배치 (모바일 미지원) */}
                 {/* Tailwind 음수 right 유틸을 사용해 더 멀리 우측으로 이동 */}
